@@ -1,0 +1,19 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    
+    let map={};
+    for(let i=0;i<nums.length;i++){
+        let needed =target-nums[i];
+        if(map[needed]!=undefined){
+            return[map[needed],i];
+        }
+        map[nums[i]]=i;
+    }
+}
+let nums=[2,7,11,15];
+let target=9;
+console.log(twoSum(nums,target));
