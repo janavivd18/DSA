@@ -5,15 +5,17 @@
  */
 var twoSum = function(nums, target) {
     
-    let map={};
-    for(let i=0;i<nums.length;i++){
-        let needed =target-nums[i];
-        if(map[needed]!=undefined){
-            return[map[needed],i];
+    for(let i = 0;i <= nums.length; i++){
+        for(let j = i+1; j <= nums.length; j++){
+            let sum = nums[i] + nums[j];
+            if(sum === target){
+                let arr = [i,j];
+                return arr;
+            }
         }
-        map[nums[i]]=i;
+        
     }
-}
-let nums=[2,7,11,15];
-let target=9;
+};
+nums = [2,7,11,15];
+target = 9
 console.log(twoSum(nums,target));
